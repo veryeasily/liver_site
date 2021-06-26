@@ -6,6 +6,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url(../assets/images/bg.jpg);
+  overflow: hidden;
 }
 
 .main {
@@ -34,7 +36,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #88ff19;
   text-decoration: none;
 }
 
@@ -45,6 +47,7 @@
 }
 
 .title {
+  color: #000;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
