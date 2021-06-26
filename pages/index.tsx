@@ -71,7 +71,7 @@ export default function Home({ rooms: initRooms }: HomeProps) {
     );
 }
 
-export function getServerSideProps() {
+export function getStaticProps() {
     const rooms = [];
     for (let i = 0; i < 10; i++) {
         rooms.push(createRoomProps());

@@ -1,9 +1,8 @@
 import * as React from "react";
-import styled from "@emotion/styled";
-import { motion, MotionValue, useMotionValue } from "framer-motion";
-import { getRandomColor, toPercentage, toPx } from "../lib/helpers";
-import { useWindowSize, usePrevious, useRaf } from "react-use";
 import Color from "color";
+import { getRandomColor, toPercentage, toPx } from "../lib/helpers";
+import { motion, MotionValue, useMotionValue } from "framer-motion";
+import { useWindowSize, usePrevious, useRaf } from "react-use";
 
 interface Transform {
     x: number;
