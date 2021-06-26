@@ -1,9 +1,14 @@
 import * as React from "react";
 import Head from "next/head";
-import styles from "../styles/home.module.css";
-import Room, { BaseRoomProps } from "../components/room";
 import _cloneDeep from "lodash/cloneDeep";
 import { useWindowSize } from "react-use";
+
+import Room, { BaseRoomProps } from "../components/room";
+import styles from "../styles/home.module.css";
+
+interface HomeProps {
+    rooms: BaseRoomProps[];
+}
 
 function createRoomProps() {
     return {
@@ -17,8 +22,12 @@ function createRoomProps() {
     };
 }
 
-interface HomeProps {
-    rooms: BaseRoomProps[];
+export function getStaticProps() {
+    const rooms = [];
+    for (let i = 0; i < 10; i++) {
+        rooms.push(createRoomProps());
+    }
+    return { props: { rooms } };
 }
 
 export default function Home({ rooms: initRooms }: HomeProps) {
@@ -69,12 +78,4 @@ export default function Home({ rooms: initRooms }: HomeProps) {
             </main>
         </div>
     );
-}
-
-export function getStaticProps() {
-    const rooms = [];
-    for (let i = 0; i < 10; i++) {
-        rooms.push(createRoomProps());
-    }
-    return { props: { rooms } };
 }
